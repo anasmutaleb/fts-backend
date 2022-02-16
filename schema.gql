@@ -1,0 +1,31 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AdminEntity {
+  created_at: DateTime!
+  updated_at: DateTime!
+  user_id: ID!
+  user_firstname: String!
+  user_lastname: String!
+  user_email: String!
+  user_occupation: String!
+  user_age: String!
+  user_earnings: String!
+  user_birthdate: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  adminLogin(input: LoginAdminDto!): AdminEntity!
+  adminAll: [AdminEntity!]!
+}
+
+input LoginAdminDto {
+  user_email: String!
+  user_pass: String!
+}
